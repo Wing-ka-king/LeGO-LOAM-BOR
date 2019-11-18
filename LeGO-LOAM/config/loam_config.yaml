@@ -4,10 +4,10 @@ lego_loam:
     laser:
         num_vertical_scans: 16
         num_horizontal_scans: 1800
-        ground_scan_index: 7
+        ground_scan_index: 12
         vertical_angle_bottom: -15          # degrees
         vertical_angle_top: 15              # degrees
-        sensor_mount_angle: 0               # degrees
+        sensor_mount_angle: -30               # degrees
         scan_period: 0.1                    # seconds
 
     imageProjection:

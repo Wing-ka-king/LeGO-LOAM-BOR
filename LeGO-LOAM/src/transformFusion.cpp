@@ -40,16 +40,16 @@ TransformFusion::TransformFusion(ros::NodeHandle& node) : nh(node) {
   subOdomAftMapped = nh.subscribe<nav_msgs::Odometry>(
       "/aft_mapped_to_init", 5, &TransformFusion::odomAftMappedHandler, this);
 
-  laserOdometry2.header.frame_id = "/camera_init";
-  laserOdometry2.child_frame_id = "/camera";
+  laserOdometry2.header.frame_id = "/velodyne_init";
+  laserOdometry2.child_frame_id = "/velodyne";
 
-  laserOdometryTrans2.frame_id_ = "/camera_init";
-  laserOdometryTrans2.child_frame_id_ = "/camera";
+  laserOdometryTrans2.frame_id_ = "/velodyne_init";
+  laserOdometryTrans2.child_frame_id_ = "/velodyne";
 
   map_2_camera_init_Trans.frame_id_ = "/map";
-  map_2_camera_init_Trans.child_frame_id_ = "/camera_init";
+  map_2_camera_init_Trans.child_frame_id_ = "/velodyne_init";
 
-  camera_2_base_link_Trans.frame_id_ = "/camera";
+  camera_2_base_link_Trans.frame_id_ = "/velodyne";
   camera_2_base_link_Trans.child_frame_id_ = "/base_link";
 
   for (int i = 0; i < 6; ++i) {
